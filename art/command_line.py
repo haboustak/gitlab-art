@@ -81,6 +81,8 @@ def install_member(archive, member, target):
 def main(cache):
     """Art, the Gitlab artifact repository client."""
 
+    Gitlab.enable_debug();
+
     # we change the default when running under CI...
     if 'GITLAB_CI' in os.environ:
         _paths.cache_dir = '.art-cache'
